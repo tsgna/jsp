@@ -1,3 +1,4 @@
+<%@ page import="java.time.LocalDate" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -5,6 +6,9 @@
 </head>
 <body>
 
-<p>Dzisiaj jest: <%= java.time.LocalDate.now().toString()%></p>
+<p>Dzisiaj jest: <%
+    final LocalDate now = LocalDate.now();
+out.print(now);
+%></p>
 </body>
 </html>
