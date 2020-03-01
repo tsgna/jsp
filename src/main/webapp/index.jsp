@@ -5,7 +5,7 @@
     <title>Hello World</title>
 </head>
 <body>
-<form action="search.jsp">
+<form action="search.jsp" method="post">
     <label>Szukane słowo: <input type="text" name="query"/></label>
     <label>Strona nr: <input type="text" name="page"></label>
     <label>Sortowanie:
