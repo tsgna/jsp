@@ -1,5 +1,7 @@
 package pl.sda.jsp.servlet;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -11,9 +13,13 @@ import java.io.PrintWriter;
 public class HelloWorldServlet extends HttpServlet {
 
     @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         final PrintWriter writer = response.getWriter();
         writer.println("Hello world");
-        response.sendRedirect("home.jsp");
+
+       // response.sendRedirect("home.jsp");
+
+        final RequestDispatcher dispatcher = request.getRequestDispatcher("home.jsp");
+        dispatcher.forward(request, response);
     }
 }
